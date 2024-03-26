@@ -36,11 +36,7 @@ const Mapping = () => {
             borderRadius: '50%',
           }}
         ></div>
-        <img
-          src="./images/map.jpg"
-          alt="Map"
-          style={{ maxWidth: '100%', height: 'auto' }}
-        />
+        <div style={{ maxWidth: '100%', height: '100%' }}></div>
       </div>
     </div>
   );
