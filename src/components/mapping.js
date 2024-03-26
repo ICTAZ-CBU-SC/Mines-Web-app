@@ -10,8 +10,8 @@ const Mapping = () => {
       // Example: Update latitude and longitude every 30 seconds
       setInterval(() => {
         // Update latitude and longitude randomly (for demonstration purposes)
-        setLatitude(10 * 180 - 90);{/*replace with variables from firebase location */}
-        setLongitude(10 * 360 - 180);{/*replace with variables from firebase location */}
+        setLatitude(Math.random() * 180 - 90);/*replace (Math.random()) with variables from firebase location */
+        setLongitude(Math.random() * 360 - 180);/*replace (Math.random()) with variables from firebase location */
       }, 30000);
     };
 
@@ -23,13 +23,13 @@ const Mapping = () => {
 
   return (
     <div className="container">
-      <div className="map-container">
+      <div className="map-container" style={{ position: 'relative', width: '400px', height: '200px' }}>
         <div
           className="dot"
           style={{
-            position: 'absolute',
-            top: `${50 + latitude}%`, // Example: Offset by 50%
-            left: `${50 + longitude}%`, // Example: Offset by 50%
+            position: 'relative',
+            top: `${latitude}%`, // Example: Offset by 50%
+            left: `${longitude}%`, // Example: Offset by 50%
             backgroundColor: 'red',
             width: '10px',
             height: '10px',
