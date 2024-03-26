@@ -10,9 +10,9 @@ const Mapping = () => {
       // Example: Update latitude and longitude every 30 seconds
       setInterval(() => {
         // Update latitude and longitude randomly (for demonstration purposes)
-        setLatitude(prevLongitude => prevLongitude + 10);/*replace (Math.random()) with variables from firebase location */
-        setLongitude(prevLongitude => prevLongitude + 10);/*replace (Math.random()) with variables from firebase location */
-      }, 10000);
+        setLatitude(Math.random() * 180 - 90);/*replace (Math.random()) with variables from firebase location */
+        setLongitude(Math.random() * 360 - 180);/*replace (Math.random()) with variables from firebase location */
+      }, 30000);
     };
 
     moveDot(); // Start moving the dot
@@ -37,7 +37,7 @@ const Mapping = () => {
           }}
         ></div>
         <img
-          src="./images/map.jpeg"
+          src="./images/map.jpg"
           alt="Map"
           style={{ maxWidth: '100%', height: 'auto' }}
         />
