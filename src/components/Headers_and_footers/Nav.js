@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { HiMenuAlt2 } from "react-icons/hi";
+import { GrMapLocation } from "react-icons/gr";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
     const [slider, setSlider] = useState(false)
@@ -25,9 +27,14 @@ const NavBar = () => {
         <>
             <div>
                 <div className="bg-light" style={{position:'relative'}}>
-                    <div className="" id="slidenav" style={{height:'100vh', paddingTop:'60px'}}>
+                    <div className="" id="slidenav" style={{height:'100vh', paddingTop:'60px', overflow:'hidden'}}>
                         <div className="bg-white" style={{width:'100%', height:'100%'}}>
-                            <div></div>
+                            <Link to=''>
+                                <div style={{gap:'20px'}} className="d-flex p-4" >
+                                    <div><GrMapLocation size={30}/></div>
+                                    <div className="d-flex flex-column justify-content-center fs-5 fw-semibold">Map</div>
+                                </div>
+                            </Link>
                         </div>
                     </div>
                     <div style={{position:'fixed', top:'10px', left:'10px'}}>
