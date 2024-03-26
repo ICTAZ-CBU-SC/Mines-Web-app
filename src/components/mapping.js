@@ -12,7 +12,7 @@ const Mapping = () => {
         // Update latitude and longitude randomly (for demonstration purposes)
         setLatitude(Math.random() * 180 - 90);/*replace (Math.random()) with variables from firebase location */
         setLongitude(Math.random() * 360 - 180);/*replace (Math.random()) with variables from firebase location */
-      }, 5000);
+      }, 30000);
     };
 
     moveDot(); // Start moving the dot
