@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { HiMenuAlt2 } from "react-icons/hi";
+//import { HiMenuAlt2 } from "react-icons/hi";
 
 const NavBar = () => {
     const [slider, setSlider] = useState(false)
@@ -31,7 +31,7 @@ const NavBar = () => {
                         </div>
                     </div>
                     <div style={{position:'fixed', top:'10px', left:'10px'}}>
-                        <HiMenuAlt2  style={{cursor:'pointer'}} onClick={() => ActivateSlider()} size={40}>menu</HiMenuAlt2 >
+                        <button style={{cursor:'pointer'}} onClick={() => ActivateSlider()} size={40}>menu</button>
                     </div>
                 </div>
             </div>
