@@ -41,7 +41,7 @@ const NavBar = () => {
                         </div>
                     </div>
                     <div style={{position:'fixed', top:'10px', left:'10px'}}>
-                        <button style={{cursor:'pointer'}} onClick={() => ActivateSlider()} size={40}>menu</button>
+                        <button style={{cursor:'pointer'}} onClick={() => ActivateSlider()} size={40}>Menu</button>
                     </div>
                 </div>
             </div>
@@ -50,3 +50,5 @@ const NavBar = () => {
 }
 
 export default NavBar;
+
+// I was here
