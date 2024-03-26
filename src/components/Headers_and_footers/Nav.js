@@ -1,6 +1,8 @@
 import { useState } from "react";
+/*
 import { HiMenuAlt2 } from "react-icons/hi";
 import { GrMapLocation } from "react-icons/gr";
+*/
 import { Link } from "react-router-dom";
 //import { HiMenuAlt2 } from "react-icons/hi";
 
@@ -32,7 +34,7 @@ const NavBar = () => {
                         <div className="bg-white" style={{width:'100%', height:'100%'}}>
                             <Link to=''>
                                 <div style={{gap:'20px'}} className="d-flex p-4" >
-                                    <div><GrMapLocation size={30}/></div>
+                                    {/* <div>< size={30}/></div>*/}
                                     <div className="d-flex flex-column justify-content-center fs-5 fw-semibold">Map</div>
                                 </div>
                             </Link>
