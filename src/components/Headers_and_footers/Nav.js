@@ -25,9 +25,9 @@ const NavBar = () => {
         <>
             <div>
                 <div className="bg-light" style={{position:'relative'}}>
-                    <div className="" id="slidenav" style={{height:'100vh'}}>
-                        <div style={{}}>
-
+                    <div className="" id="slidenav" style={{height:'100vh', paddingTop:'60px'}}>
+                        <div className="bg-white" style={{width:'100%', height:'100%'}}>
+                            <div></div>
                         </div>
                     </div>
                     <div style={{position:'fixed', top:'10px', left:'10px'}}>
