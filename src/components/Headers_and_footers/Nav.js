@@ -28,7 +28,7 @@ const NavBar = () => {
         <>
             <div>
                 <div className="bg-light" style={{position:'relative'}}>
-                    <div className="" id="slidenav" style={{height:'100vh', paddingTop:'60px', overflow:'hidden'}}>
+                    <div className="slidenav_1" id="slidenav" style={{height:'100vh', paddingTop:'60px', overflow:'hidden'}}>
                         <div className="bg-white" style={{width:'100%', height:'100%'}}>
                             <Link to=''>
                                 <div style={{gap:'20px'}} className="d-flex p-4" >
