@@ -14,15 +14,15 @@ const NavBar = () => {
     
 
     const ActivateSlider = () => {
+        setSlider(!slider)
+        
         if(slider){
             document.getElementById('slidenav').classList.remove('slidenav_2')
             document.getElementById('slidenav').classList.add('slidenav_1')
         } else {
             document.getElementById('slidenav').classList.remove('slidenav_1')
             document.getElementById('slidenav').classList.add('slidenav_2')
-        }
-
-        setSlider(!slider)
+        }        
     }
 
     

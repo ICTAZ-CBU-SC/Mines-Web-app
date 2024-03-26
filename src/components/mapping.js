@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import images from "./images/map.jpeg"
+import images from './images/map.jpg'
 
 const Mapping = () => {
   const [workers, setWorkers] = useState([
@@ -74,11 +74,6 @@ const Mapping = () => {
             }}
           ></div>
         ))}
-        <img
-          src={images}
-          alt="Map"
-          style={{ maxWidth: '100%', height: 'auto' }}
-        />
       </div>
     </div>
   );
