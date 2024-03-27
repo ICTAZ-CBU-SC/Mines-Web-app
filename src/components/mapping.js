@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import images from './images/map.jpg'
 
 const Mapping = () => {
   const [workers, setWorkers] = useState([
