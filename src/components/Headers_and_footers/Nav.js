@@ -1,10 +1,8 @@
 import { useState } from "react";
-/*
 import { HiMenuAlt2 } from "react-icons/hi";
-import { GrMapLocation } from "react-icons/gr";
-*/
+import { FaUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
-//import { HiMenuAlt2 } from "react-icons/hi";
+import { VscBellDot } from "react-icons/vsc";
 
 const NavBar = () => {
     const [slider, setSlider] = useState(false)
@@ -33,15 +31,21 @@ const NavBar = () => {
                     <div className="slidenav_1" id="slidenav" style={{height:'100vh', paddingTop:'60px', overflow:'hidden'}}>
                         <div className="bg-white" style={{width:'100%', height:'100%'}}>
                             <Link to=''>
-                                <div style={{gap:'20px'}} className="d-flex p-4" >
-                                    {/* <div>< size={30}/></div>*/}
-                                    <div className="d-flex flex-column justify-content-center fs-5 fw-semibold">Map</div>
+                                <div style={{gap:'20px'}} className="d-flex p-2" >
+                                    <div><FaUser size={20}/></div>
+                                    <div className="d-flex flex-column justify-content-center fw-semibold">All users</div>
+                                </div>
+                            </Link>
+                            <Link to=''>
+                                <div style={{gap:'20px'}} className="d-flex p-2" >
+                                    <div><VscBellDot size={20}/></div>
+                                    <div className="d-flex flex-column justify-content-center fw-semibold">User Alerts</div>
                                 </div>
                             </Link>
                         </div>
                     </div>
                     <div style={{position:'fixed', top:'10px', left:'10px'}}>
-                        <button style={{cursor:'pointer'}} onClick={() => ActivateSlider()} size={40}>menu</button>
+                        <HiMenuAlt2 style={{cursor:'pointer'}} onClick={() => ActivateSlider()} size={40}/>
                     </div>
                 </div>
             </div>
