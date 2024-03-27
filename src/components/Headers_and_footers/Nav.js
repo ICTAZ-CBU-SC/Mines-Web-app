@@ -30,7 +30,7 @@ const NavBar = () => {
                 <div className="bg-light" style={{position:'relative'}}>
                     <div className="slidenav_1" id="slidenav" style={{height:'100vh', paddingTop:'60px', overflow:'hidden'}}>
                         <div className="bg-white" style={{width:'100%', height:'100%'}}>
-                            <Link to=''>
+                            <Link to='/users'>
                                 <div style={{gap:'20px'}} className="d-flex p-2" >
                                     <div><FaUser size={20}/></div>
                                     <div className="d-flex flex-column justify-content-center fw-semibold">All users</div>
