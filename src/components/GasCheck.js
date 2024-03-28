@@ -1,8 +1,13 @@
 import { useContext, useEffect, useState } from "react";
 import { FaArrowLeft } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import { ThemeContext } from "../functions/Context";
 
-const GasCheck = (props) => {
+const GasCheck = () => {
+const [Alert, setAlert] = useState(true)
+
+
+   
 
     return (
         <>
@@ -14,17 +19,14 @@ const GasCheck = (props) => {
                 </div>
 
                 <div className="shadow-sm p-3 rounded-4 d-flex" style={{gap:'10px', backgroundColor:'#ddd'}}>
-                    <div>NAME: {props.name}</div>
-                </div>
-                <div className="shadow-sm p-3 rounded-4 d-flex" style={{gap:'10px', backgroundColor:'#ddd'}}>
-                    <div>Gas Level | {props.gas}% </div> |
+                    <div>Gas Level | 30% </div> | 
                     <div  className="d-flex flex-column justify-content-center">
-                        {props.gas > 50 ? <span className="bg-danger" style={{width:'20px', height:'20px', borderRadius:'50%'}}></span> : <span className="bg-success" style={{width:'20px', height:'20px', borderRadius:'50%'}}></span>}
+                        <span className="bg-success" style={{width:'20px', height:'20px', borderRadius:'50%'}}></span>
                     </div>
                 </div>
-                {props.gas > 50 ?<div id="blinkAlert" className="d-flex flex-column justify-content-center">
+                <div id="blinkAlert" className="d-flex flex-column justify-content-center">
                     <span className="bg-danger" style={{width:'20px', height:'20px', borderRadius:'50%'}}></span>
-                </div>: <span>All clear</span>}
+                </div>
             </div>
         </>
     )

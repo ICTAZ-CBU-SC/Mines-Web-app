@@ -6,10 +6,14 @@ import { VscBellDot } from "react-icons/vsc";
 
 const NavBar = () => {
     const [slider, setSlider] = useState(false)
+     
 
-    //open and close navBar
+
+    
+
     const ActivateSlider = () => {
-        setSlider(!slider) 
+        setSlider(!slider)
+        
         if(slider){
             document.getElementById('slidenav').classList.remove('slidenav_2')
             document.getElementById('slidenav').classList.add('slidenav_1')
@@ -50,3 +54,5 @@ const NavBar = () => {
 }
 
 export default NavBar;
+
+// I was here
