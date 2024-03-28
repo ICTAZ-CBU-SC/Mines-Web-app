@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import Profile from "./users";
 import { ThemeContext } from "../../functions/Context";
+import { Link } from "react-router-dom";
 
 const UserPage = () => {
     const data = useContext(ThemeContext)

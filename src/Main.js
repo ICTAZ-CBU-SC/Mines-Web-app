@@ -1,4 +1,4 @@
-import { Maps } from "./components/Chart";
+import { Charts } from "./components/Chart";
 import { useLocation } from "react-router-dom";
 import GasCheck from "./components/GasCheck";
 import MapComp from "./components/MapComp";
@@ -12,7 +12,7 @@ const MainPage = () => {
                 <GasCheck {...location.state}/>{/*parse data through location.state to the component*/}
             </div>
             <MapComp {...location.state}/>
-            <Maps/>
+            <Charts/>
         </div>
     );
 }
