@@ -1,3 +1,4 @@
+import { Maps } from "./components/Chart";
 import GasCheck from "./components/GasCheck";
 import MapComp from "./components/MapComp";
 
@@ -10,6 +11,8 @@ const MainPage = () => {
                     <GasCheck/>
                 </div>
                 <MapComp/>
+
+                <Maps/>
             </div>
         </>
     )
