@@ -1,5 +1,5 @@
-
-const MapComp = () => {
+// render video feed in here
+const VideoFeed = () => {
     return(
         <>
             <div>
@@ -13,4 +13,4 @@ const MapComp = () => {
     )
 }
 
-export default MapComp;
+export default VideoFeed;
