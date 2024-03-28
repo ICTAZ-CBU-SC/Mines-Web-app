@@ -3,6 +3,7 @@ import MainPage from './Main';
 import NavBar from './components/Headers_and_footers/Nav';
 import './App.css'
 import Profile from './components/user_files/users';
+import UserPage from './components/user_files/userpage';
 //import './components/user_files/users.js'
 
 function App() {
@@ -13,8 +14,8 @@ function App() {
         <NavBar/>
         <div className='w-100'>
           <Routes>
-            <Route path='/' element={<MainPage/>} />
-            <Route path='/users' element={<Profile/>}/>
+            <Route path='/Users/:id' element={<MainPage/>} />
+            <Route path='/Users' element={<UserPage/>}/>
           </Routes>
         </div>
       </div>

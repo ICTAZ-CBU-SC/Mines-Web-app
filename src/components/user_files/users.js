@@ -1,36 +1,37 @@
-import image from "../images/map.jpg"
-const user = {
-    name: "Joshua Sibanda",
-    position: 'Worker',
-    imgUrl: image,
-    gas: "30%"
-}
+import { Link } from "react-router-dom";
 
-export default function Profile(){
+const Profile = (props) => {
     return (
         <>
-            <main style={{margin:'50px',}}> 
-                <div style={{paddingBottom:'10px',paddingTop:'10px',width:'270px', paddingInline:'5px', background:'#64748b', borderRadius:'10px'}}>
-                    <div style={{display:'flex', justifyContent:'flex-end', verticalAlign:'middle',marginRight:'5px'}}>
-                        <p style={{display:'block', padding:'1px 3px', marginRight:'5px', borderRadius:'5px', background:'#e2e8f0', fontWeight:'bold', fontSize:'10px'}}>Gas | 30%</p>
-                        <div className='' style={{height:'10px', width: '10px', background:'red', borderRadius: '50%' }} ></div>
+            <div style={{}}> 
+            <Link to={'/Users/'+ props.id}>
+                <div style={{position:'relative'}} className="bg-secondary rounded-4 p-4">
+                    <div className="py-3">
+
                     </div>
-                    <div style={{display:'flex', justifyContent:'flex-end', alignItems:'center', marginRight:'3px'}}>
-                        <div style={{width:'70px', textAlign:'center'}}>
-                            <img
-                                className = "avatar"
-                                src = {user.imgUrl}
-                                style = {{height:'50px', width:'50px', borderRadius:"50%"}}
-                            />
+                        <div className="d-flex" style={{position:'absolute', gap:'10px', top:'10px', right:'10px'}}>
+                            <div className="bg-light rounded-2 px-3 d-flex justify-content-center flex-column">
+                                Gas | 30
+                            </div>
+                            <div className="d-flex justify-content-center flex-column">
+                                <div className="bg-danger" style={{height:'10px', width:'10px', borderRadius:'50%'}}></div>
+                            </div>
                         </div>
-                        <div style={{width:'200px', margin:'auto'}}>
-                            <h1 style={{fontWeight:'bolder', fontSize:"18px"}}>{user.name}</h1>
-                            <span>{user.position}</span>
+                        <div className="d-flex">
+                            <div className="bg-light" style={{height:'50px', width:'50px', borderRadius:'50%'}}></div>
+                            <div className="d-flex  ps-2 ">
+                                <div className="text-white">
+                                    <div>{props.name}</div>
+                                    <div>{props.position}</div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
                 </div>
-            </main>
+            </Link>
+            </div>
             
         </>
     )
 }
+
+export default Profile;

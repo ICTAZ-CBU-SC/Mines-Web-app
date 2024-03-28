@@ -5,8 +5,10 @@ const MainPage = () => {
    
     return (
         <>
-            <div className="bg-light p-4 d-flex flex-column" style={{minHeight:'100vh', gap:'20px'}}>
-                <GasCheck/>
+            <div className="ps-5 ms-3 p-4 d-flex flex-column" style={{minHeight:'100vh', gap:'20px'}}>
+                <div className="">
+                    <GasCheck/>
+                </div>
                 <MapComp/>
             </div>
         </>
