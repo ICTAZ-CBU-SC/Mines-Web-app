@@ -1,6 +1,6 @@
 import Chart from 'chart.js/auto'
 import { useEffect, useState } from 'react';
-export const Maps = () => {
+export const Charts = () => {
 
 const datapoints = [1]
 
