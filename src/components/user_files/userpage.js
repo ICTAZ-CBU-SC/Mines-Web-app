@@ -18,7 +18,7 @@ const UserPage = () => {
                             {data.map((e) => {
                                 //map through all elements.
                                 return(
-                                    <Link to={{pathname: '/Users/'+ e.id, state: {e}, search: ''+e.id }} className="col-3 p-4" key={e.id}>
+                                    <Link to={{pathname: '/Users/'+ e.id, state: {name: e.name, id: e.id, position: e.position, gas: e.gas}, search: ''+e.id }} className="col-3 p-4" key={e.id}>
                                         <Profile name={e.name} id={e.id} position={e.position} gas={e.gas} />
                                     </Link>
                                 )
