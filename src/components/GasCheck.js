@@ -8,7 +8,7 @@ const GasCheck = (props) => {
         <>
             <div className="d-flex justify-content-between pt-3" >
                 <div  className="d-flex flex-column justify-content-center">
-                    <Link to='/users'>
+                    <Link to='/'>
                         <FaArrowLeft size={20} />
                     </Link>
                 </div>

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { VscBellDot } from "react-icons/vsc";
 
 const NavBar = () => {
-    const [slider, setSlider] = useState(false)
+    const [slider, setSlider] = useState(true)
      
 
 
@@ -28,9 +28,9 @@ const NavBar = () => {
         <>
             <div style={{}}>
                 <div className="bg-secondary " style={{position:'relative', zIndex:3}}>
-                    <div className="slidenav_1 shadow-sm" id="slidenav" style={{height:'100vh', paddingTop:'60px', overflow:'hidden',position:"fixed", top:0, bottom:0, left:0}}>
-                        <div className="bg-white" style={{width:'100%', height:'100%'}}>
-                            <Link to='/Users'>
+                    <div className="slidenav_2 shadow-sm" id="slidenav" style={{height:'100vh', overflow:'hidden',position:"fixed", top:0, bottom:0, left:0}}>
+                        <div className="bg-white" style={{width:'100%', paddingTop:'60px', height:'100%'}}>
+                            <Link to='/'>
                                 <div style={{gap:'20px'}} className="d-flex p-2" >
                                     <div><FaUser size={20}/></div>
                                     <div className="d-flex flex-column justify-content-center fw-semibold">All users</div>

@@ -15,7 +15,7 @@ function App() {
         <div className='w-100'>
           <Routes>
             <Route path='/Users/:id' element={<MainPage/>} />
-            <Route path='/Users' element={<UserPage/>}/>
+            <Route path='/' element={<UserPage/>}/>
           </Routes>
         </div>
       </div>
