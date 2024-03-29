@@ -1,8 +1,9 @@
+import axios from 'axios';
 import Chart from 'chart.js/auto'
 import { useEffect, useState } from 'react';
 export const Charts = () => {
 
-const datapoints = [0]
+const datapoints = []
 const labels = [0];
 
 const addtoobject = () => {
@@ -40,9 +41,9 @@ const AddvaluesToObject = ( ) => {
         }]
     };
 
-    setInterval(() => {
-        addtoobject()
-    }, 2000)
+    // setInterval(() => {
+    //     addtoobject()
+    // }, 2000)
 
 //this creates the chart
 let thatvalue
@@ -61,6 +62,10 @@ let thatvalue
             }
         );
         
+
+        // axios.get('http://localhost:5038/api/gasreading/latest').then((e) => {
+        //     console.log(e.data)
+        // })
 },[])
 
 
