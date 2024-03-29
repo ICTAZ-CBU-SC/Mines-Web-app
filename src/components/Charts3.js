@@ -13,7 +13,7 @@ const Charts3 = () => {
     }, 1000);
 
     const Chaneg = () => {
-        xdata.push(faker.number.int({max:400}))
+        xdata.push(faker.number.int({ max: 400 }))
         setXdata(xdata)
 
         let val2 = timer.length
@@ -22,7 +22,7 @@ const Charts3 = () => {
 
         ApexCharts.exec('realtime', 'updateSeries', [{
             data: xdata
-          }])
+        }])
 
         //   ApexCharts.exec('realtime', 'updateOptions', [{
         //     xaxis: {
@@ -30,7 +30,7 @@ const Charts3 = () => {
         //     } 
         //   }])
     }
-    
+
     const series = [{
         data: xdata.slice(),
         max: 100
@@ -48,7 +48,7 @@ const Charts3 = () => {
                     speed: 1000
                 }
             },
-            
+
             dropShadow: {
                 enabled: true,
                 color: '#000',
@@ -56,17 +56,17 @@ const Charts3 = () => {
                 left: 7,
                 blur: 10,
                 opacity: 0.2
-                
+
             }
         },
         zoom: {
             enabled: false
-          },
-            toolbar: {
-                show: false
-            },
-        
-        
+        },
+        toolbar: {
+            show: false
+        },
+
+
         colors: ['#77B6EA', '#545454'],
         dataLabels: {
             enabled: false,
@@ -92,6 +92,10 @@ const Charts3 = () => {
             categories: timer,
             title: {
                 text: 'Time'
+            },
+            type: 'datetime',
+            labels: {
+                format: 'MM yyyy'
             }
         },
         yaxis: {
