@@ -4,7 +4,7 @@ const MapComp = () => {
         <>
             <div>
                 <div>
-                    <div className="bg-secondary rounded-3 shadow-sm" style={{height:"500px", width:'100%', overflow: "scroll"}}>
+                    <div className="bg-secondary rounded-3 shadow-sm" style={{height:"500px", width:'100%'}}>
                         
                     </div>
                 </div>

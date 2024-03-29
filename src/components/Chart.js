@@ -1,63 +1,73 @@
-import Chart from 'chart.js/auto'
 import { useEffect, useState } from 'react';
+import { Chart } from 'react-google-charts';
 export const Charts = () => {
 
-const datapoints = [1]
-
-const addtoobject = () => {
-    AddvaluesToObject()
+    //load current chart package
+    google.charts.load('current', {
+        packages: ["corechart", "line"]
+    });
     
-        thatvalue.update()
-
-}
-
-
-const AddvaluesToObject = ( ) => {
-    const mylength = datapoints.length
-    datapoints.push(mylength)
-}
+    //set callback function when api loaded
+    google.charts.setOnLoadCallback(drawChart);
     
-    const DATA_COUNT = 10;
-    const labels = [];
-    for (let i = 0; i < DATA_COUNT; ++i) {
-        labels.push(i.toString());
-    }
-
-    const data = {
-        labels: labels,
-        datasets: [{
-            label: 'Gas levels',
-            data: datapoints,
-            fill: false,
-            borderColor: 'rgb(75, 192, 192)',
-            tension: 0.1
-        }]
-    };
-
+    function drawChart(){
+        //create data object with default value
+        let data = google.visualization.arrayToDataTable([
+            ['Time', 'Carbon Monoxide'],
+            [0,0],
+        ]);
     
-
-//this creates the chart
-let thatvalue
-
- useEffect(() => {
-   thatvalue = new Chart(
-            document.getElementById('acquisitions'),
-            {
-                type: 'line',
-                data: data
+        //create options object with titles, colors, etc.
+        let options = {
+            title: "Level of Carbon Monoxide Gas per second Graph",
+            backgroundColor: '#f7f7f7f',
+            hAxis:{
+                title: 'Seconds',
+                
+            },
+            vAxis:{
+                title: "Gas",
+                
             }
+        };
+    
+        //dra chart on load
+        let chart = new google.visualization.LineChart(
+            document.getElementById("chart")
         );
-        
-},[])
-
+        chart.draw(data, options);
+    
+    
+    //max amount of data rows that should be displayed
+    let maxDatas = 50;
+    
+    //interval for adding new data every 250ms
+    let index = 0;
+    setInterval(function(){
+        //Dummy data
+        let randomGas = Math.random() * 50 + 20;
+    
+        if( randomGas > 69){
+            let count = 0;
+            count = count++;
+            console.log(count)
+        }
+    
+        if(data.getNumberOfRows() > maxDatas){
+            data.removeRows(0, data.getNumberOfRows() - maxDatas);
+        }
+    
+        data.addRow([index, randomGas]);
+        chart.draw(data, options);
+    
+        index++;
+    }, 1000);
+    }
 
     return (
         <>  
         <div>
-            <div style={{ width: '100%'}}>
-                <canvas id="acquisitions"></canvas>
-            </div>
-            <button onClick={() => addtoobject()}>click</button>
+            <div id="chart" className="w-[1200px] h-[400px]"></div>
         </div>
         </>
     )
