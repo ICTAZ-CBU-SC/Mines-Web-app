@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react';
-import { Chart } from 'react-google-charts';
-export const Charts = () => {
+import { useState } from "react";
 
+export const Charts = () => {
+    const [critical, setCritical] = useState(false);
     //load current chart package
     google.charts.load('current', {
         packages: ["corechart", "line"]
@@ -39,7 +39,7 @@ export const Charts = () => {
     
     
     //max amount of data rows that should be displayed
-    let maxDatas = 50;
+    let maxDatas = 10;
     
     //interval for adding new data every 250ms
     let index = 0;
@@ -47,12 +47,8 @@ export const Charts = () => {
         //Dummy data
         let randomGas = Math.random() * 50 + 20;
     
-        if( randomGas > 69){
-            let count = 0;
-            count = count++;
-            console.log(count)
-        }
-    
+        randomGas > 69 ? setCritical(true): setCritical(false);
+        
         if(data.getNumberOfRows() > maxDatas){
             data.removeRows(0, data.getNumberOfRows() - maxDatas);
         }
@@ -61,12 +57,13 @@ export const Charts = () => {
         chart.draw(data, options);
     
         index++;
-    }, 1000);
+    }, 2000);
     }
 
     return (
         <>  
         <div>
+            {critical && <div className="bg-danger" style={{height:'10px', width:'10px', borderRadius:'50%'}}></div>}
             <div id="chart" className="w-[1200px] h-[400px]"></div>
         </div>
         </>
