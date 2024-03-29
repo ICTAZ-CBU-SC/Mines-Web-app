@@ -1,75 +1,71 @@
-import Chart from 'chart.js/auto'
 import { useEffect, useState } from 'react';
 export const Charts = () => {
 
-const datapoints = [0]
-const labels = [0];
-
-const addtoobject = () => {
-    AddvaluesToObject()
+    //load current chart package
+    google.charts.load('current', {
+        packages: ["corechart", "line"]
+    });
     
-        thatvalue.update()
-
-}
-
-
-const AddvaluesToObject = ( ) => {
-    const mylength = datapoints.length
-    datapoints.push(mylength)
-
-    const anoterlenght = labels.length
-    labels.push(labels[anoterlenght-1] + 5)
-
-    // delete labels[0]
-    // delete datapoints[0]
-    // console.log(labels[1])
-    // if(datapoints.length > 5){
-    // }
-}
+    //set callback function when api loaded
+    google.charts.setOnLoadCallback(drawChart);
     
+    function drawChart(){
+        //create data object with default value
+        let data = google.visualization.arrayToDataTable([
+            ['Time', 'Carbon Monoxide'],
+            [0,0],
+        ]);
     
-
-    const data = {
-        labels: labels,
-        datasets: [{
-            label: 'Gas levels',
-            data: datapoints,
-            fill: false,
-            borderColor: 'rgb(75, 192, 192)',
-            tension: 0.5
-        }]
-    };
-
-    setInterval(() => {
-        addtoobject()
-    }, 2000)
-
-//this creates the chart
-let thatvalue
-
- useEffect(() => {
-   thatvalue = new Chart(
-            document.getElementById('acquisitions'),
-            {
-                type: 'line',
-                data: data,
-                options: {
-                    layout: {
-                        padding: 3
-                    }
-                }
+        //create options object with titles, colors, etc.
+        let options = {
+            title: "Level of Carbon Monoxide Gas per second Graph",
+            hAxis:{
+                title: 'Seconds',
+                
+            },
+            vAxis:{
+                title: "Gas",
+                
             }
+        };
+    
+        //dra chart on load
+        let chart = new google.visualization.LineChart(
+            document.getElementById("chart")
         );
-        
-},[])
-
+        chart.draw(data, options);
+    
+    
+    //max amount of data rows that should be displayed
+    let maxDatas = 50;
+    
+    //interval for adding new data every 250ms
+    let index = 0;
+    setInterval(function(){
+        //Dummy data
+        let randomGas = Math.random() * 50 + 20;
+    
+        if( randomGas > 69){
+            let count = 0;
+            count = count++;
+            console.log(count)
+        }
+    
+        if(data.getNumberOfRows() > maxDatas){
+            data.removeRows(0, data.getNumberOfRows() - maxDatas);
+        }
+    
+        data.addRow([index, randomGas]);
+        chart.draw(data, options);
+    
+        index++;
+    }, 1000);
+    }
 
     return (
         <>  
         <div>
-            <div style={{ width:'600px', overflow:'hidden'}}>
-                <canvas id="acquisitions"></canvas>
-            </div>
+            <div id="chart" class="w-[1200px] h-[400px]"></div>
         </div>
         </>
     )
