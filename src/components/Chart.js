@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Chart } from 'react-google-charts';
 export const Charts = () => {
 
     //load current chart package
@@ -19,6 +20,7 @@ export const Charts = () => {
         //create options object with titles, colors, etc.
         let options = {
             title: "Level of Carbon Monoxide Gas per second Graph",
+            backgroundColor: '#f7f7f7f',
             hAxis:{
                 title: 'Seconds',
                 
@@ -65,7 +67,7 @@ export const Charts = () => {
     return (
         <>  
         <div>
-            <div id="chart" class="w-[1200px] h-[400px]"></div>
+            <div id="chart" className="w-[1200px] h-[400px]"></div>
         </div>
         </>
     )
