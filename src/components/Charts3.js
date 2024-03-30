@@ -14,7 +14,7 @@ const Charts3 = () => {
     //this function updates the Xdata variable and pushes the values inside the object
     //everytime its run
     const Chaneg = () => {
-        xdata.push(faker.number.int({ max: 400 }))//pushes a rundom number
+        xdata.push(faker.number.int({ max: 1023 }))//pushes a rundom number
         setXdata(xdata)//the Xdata with its updated copy
 
         // let val2 = timer.length
@@ -125,7 +125,7 @@ const Charts3 = () => {
                 text: 'pp'
             },
             min: 0,
-            max: 400
+            max: 1023
         },
         legend: {
             show: false

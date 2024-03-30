@@ -16,7 +16,7 @@ export const MyContext = ({children}) => {
     //this hook runs when the browser renders or is refreshed
     useEffect(() => {
         //this is the request function ...using axios to make a get request to our server
-            axios.get('http://192.168.0.104:5000/get-users')
+            axios.get('http://192.168.0.103:5000/get-users')
             //the  .then is used to perform assynchronouse programming
             .then((response) => {
 

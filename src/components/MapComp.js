@@ -3,7 +3,7 @@ import { useEffect } from "react";
 const MapComp = () => {
     function updateVideoFeed() {
         const video = document.getElementById('video_feed');
-        video.src = "http://192.168.0.100:5000/video_feed"; // Set the source to the video feed endpoint
+        video.src = "http://192.168.0.103:5000/video_feed/1"; // Set the source to the video feed endpoint
     }
 
     useEffect(() => {
