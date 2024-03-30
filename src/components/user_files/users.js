@@ -4,11 +4,20 @@ import { faker } from "@faker-js/faker";
 import { useState } from "react";
 
 const Profile = (props) => { //recieve data from props.
-    
+    //creates gas variable to store gas values though this is for 
+    //presentation purposes
     const [gasData, setGetData] = useState()
-    
-    setInterval(() => {
-        setGetData(faker.number.int({max:100}))
+
+    //changes the state of garData to a new rundom number value
+    const setnewVal = () => {
+        setGetData(faker.number.int({max:100})) //this creates a rundom value below or equal to 100
+        clearInterval(myinterval) //this then clears the setinterval so that the code does go crazy
+    }
+
+    //stores and initializes setinterval
+    //the function in inside runs every 2 seconds
+    let myinterval = setInterval(() => {
+        setnewVal()
     }, 2000)
 
     return (

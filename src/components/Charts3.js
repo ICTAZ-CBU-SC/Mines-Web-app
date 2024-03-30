@@ -1,41 +1,71 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Chart from "react-apexcharts"
 import ApexCharts from "apexcharts";
 import { faker } from '@faker-js/faker';
+import axios from "axios";
 
 const Charts3 = () => {
 
+    //variables that can be changed and used in the map options and series opbjects
     const [xdata, setXdata] = useState([0]);
-    const [timer, setTimer] = useState([0])
+    const [timer, setTimer] = useState([0]);
 
-    setInterval(() => {
-        Chaneg()
-    }, 1000);
 
+    //this function updates the Xdata variable and pushes the values inside the object
+    //everytime its run
     const Chaneg = () => {
-        xdata.push(faker.number.int({ max: 400 }))
-        setXdata(xdata)
+        xdata.push(faker.number.int({ max: 400 }))//pushes a rundom number
+        setXdata(xdata)//the Xdata with its updated copy
 
-        let val2 = timer.length
-        timer.push(val2)
-        setTimer(timer)
+        // let val2 = timer.length
+        // timer.push(val2)
+        // setTimer(timer)
+        //commented the code above=============
 
+        //this now updates the specific component in the graph
         ApexCharts.exec('realtime', 'updateSeries', [{
             data: xdata
         }])
-
-        //   ApexCharts.exec('realtime', 'updateOptions', [{
-        //     xaxis: {
-        //         categories: timer
-        //     } 
-        //   }])
     }
 
+    //this function runs the function chaneg
+    const setnewVal = () => {
+        Chaneg()
+    }
+
+    let myinterval =  setInterval(() => {
+       Demobtn()
+    }, 1000);
+
+    const Demobtn = () => {
+       setnewVal()
+        // if (xdata.length >= 10) {
+        //     let n = faker.number.int({ max: 400 })
+
+        //     let n2 = 0
+
+        //     for (let i = xdata.length - 1; i >= 0; i--) {
+        //         n2 = xdata[i]
+        //         xdata[i] = n
+        //         n = n2
+
+        //         setXdata(xdata)
+        //     }
+        //     ApexCharts.exec('realtime', 'updateSeries', [{
+        //         data: xdata
+        //     }])
+        // } else {
+        //     setnewVal()
+        // }
+    }
+  
+    //charts options object for chart customizations
     const series = [{
-        data: xdata.slice(),
+        data: xdata,
         max: 100
     }]
 
+    //charts options object for chart customizations
     const options = {
         chart: {
             id: 'realtime',
@@ -62,11 +92,6 @@ const Charts3 = () => {
         zoom: {
             enabled: false
         },
-        toolbar: {
-            show: false
-        },
-
-
         colors: ['#77B6EA', '#545454'],
         dataLabels: {
             enabled: false,
@@ -89,13 +114,10 @@ const Charts3 = () => {
             size: 1
         },
         xaxis: {
+            range: 15,
             categories: timer,
             title: {
                 text: 'Time'
-            },
-            type: 'datetime',
-            labels: {
-                format: 'MM yyyy'
             }
         },
         yaxis: {
@@ -106,13 +128,15 @@ const Charts3 = () => {
             max: 400
         },
         legend: {
-            position: 'top',
-            horizontalAlign: 'right',
-            floating: true,
-            offsetY: -25,
-            offsetX: -5
-        }
+            show: false
+          },
     }
+
+    useEffect(() => {
+       
+    }, [])
+
+
     return (
         <div>
             <div id="chart">

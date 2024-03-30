@@ -5,15 +5,16 @@ import { Link } from "react-router-dom";
 import { VscBellDot } from "react-icons/vsc";
 
 const NavBar = () => {
+    //slider is craeted with useState to change the state of the slider in nav
     const [slider, setSlider] = useState(true)
-     
 
-
-    
-
+    //this function changes the slider style class when the setslider sets slider to 
+    //true or false and vise versa
     const ActivateSlider = () => {
+        //changes slider state
         setSlider(!slider)
         
+        //statement to check slider state
         if(slider){
             document.getElementById('slidenav').classList.remove('slidenav_2')
             document.getElementById('slidenav').classList.add('slidenav_1')
