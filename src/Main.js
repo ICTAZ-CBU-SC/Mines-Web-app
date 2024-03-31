@@ -4,6 +4,7 @@ import MapComp from "./components/MapComp";
 import Charts3 from "./components/Charts3";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import {motion} from 'framer-motion'
 
 const MainPage = () => {
     const [datas, setDatas] = useState(null)
@@ -26,13 +27,19 @@ useEffect(() => {
 
 }, [])
     return (
-        <div className="ps-5 ms-3 p-4 d-flex flex-column" style={{minHeight:'100vh', gap:'20px'}}>
-            <div>
-                <GasCheck gass={datas} {...location.state}/>{/*parse data through location.state to the component*/}
+        <motion.div
+            initial ={{opacity:0}}
+            animate = {{opacity:1}}
+            transition={{duration:0.5}}
+        >
+            <div className="ps-5 ms-3 p-4 d-flex flex-column" style={{minHeight:'100vh', gap:'20px'}}>
+                <div>
+                    <GasCheck gass={datas} {...location.state}/>{/*parse data through location.state to the component*/}
+                </div>
+                <MapComp {...location.state}/>
+                <Charts3 gass={datas} />
             </div>
-            <MapComp {...location.state}/>
-            <Charts3 gass={datas} />
-        </div>
+        </motion.div>
     );
 }
 
