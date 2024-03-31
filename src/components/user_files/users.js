@@ -24,11 +24,14 @@ const Profile = (props) => { //recieve data from props.
             .then((response) => {
                 setGetData(response.data.Concentration)
             })
+            .catch((err) => {
+                clearInterval(intervals)
+            })
     }
 
     //stores and initializes setinterval
     //the function in inside runs every 2 seconds
-    setInterval(() => {
+   let intervals = setInterval(() => {
         GetThatData()
     }, 2000)
 
@@ -55,8 +58,8 @@ const Profile = (props) => { //recieve data from props.
                     <div className="bg-light" style={{ height: '50px', width: '50px', borderRadius: '50%' }}></div>
                     <div className="d-flex  ps-2 ">
                         <div className="fw-bold">
-                            <div>{props.name}</div>
-                            <div>{props.position}</div>
+                            <div>{`${props.mname} ${props.sname}`}</div>
+                            <div>Employee ID: {props.id}</div>
                         </div>
                     </div>
                 </div>

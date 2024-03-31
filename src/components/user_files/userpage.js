@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 const UserPage = () => {
     //get data from context tree and uses it in this functional components
     const data = useContext(ThemeContext)
-    console.log(data)
 
     
     return (
@@ -18,7 +17,7 @@ const UserPage = () => {
                             {data.length > 0 ? data.map((e) => {
                                 return(
                                     <a href={'/Users/'+ e.id} className="col-12 col-md-6 col-lg-3 p-4" key={e.id}>
-                                        <Profile name={e.n} id={e.id} position={e.position} />
+                                        <Profile mname={e.middlename} sname={e.surname} id={e.id} />
                                     </a>
                                 )
                             })
