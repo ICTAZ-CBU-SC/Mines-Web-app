@@ -1,6 +1,5 @@
 //show miner details
 
-import { faker } from "@faker-js/faker";
 import axios from "axios";
 import { useState } from "react";
 
@@ -29,7 +28,7 @@ const Profile = (props) => { //recieve data from props.
 
     //stores and initializes setinterval
     //the function in inside runs every 2 seconds
-    let myinterval = setInterval(() => {
+    setInterval(() => {
         GetThatData()
     }, 2000)
 
@@ -44,7 +43,7 @@ const Profile = (props) => { //recieve data from props.
                     </div>
                     <div className="d-flex justify-content-center flex-column">
                         {
-                            gasData > 600
+                            gasData > 580
                                 ?
                                 <div className="bg-danger" style={{ height: '10px', width: '10px', borderRadius: '50%' }}></div>
                                 :
