@@ -4,12 +4,12 @@ function Profile(props) {
     return(
         <>
 
-            <div className="text-center bg-white rounded-md pb-4 m-auto my-2 shadow-md w-48">
+            <div className="text-center bg-white rounded-md pb-4 m-auto divimg my-2 shadow-md w-48">
                 <div className="overflow-hidden h-40 rounded-md">
                     <img
                         src={props.image}
                         alt={props.name}
-                        className="w-full hover:scale-110 hover:duration-500"
+                        className="w-full "
                     />
                 </div>
                 <p className="block pt-6 text-lg font-semibold text-gray-800">{props.name}</p>
