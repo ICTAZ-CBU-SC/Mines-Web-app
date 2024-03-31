@@ -34,7 +34,7 @@ const Profile = (props) => { //recieve data from props.
 
     return (
         <div style={{}}>
-            <div style={{ position: 'relative', backgroundColor: "#bbb" }} className="rounded-4 p-4 hover:scale-110">
+            <div style={{ position: 'relative', backgroundColor: "#bbb" }} className="rounded-4 p-4 hover:scale-110 hover:duration-500">
                 <div className="py-3">
                 </div>
                 <div className="d-flex" style={{ position: 'absolute', gap: '10px', top: '10px', right: '10px' }}>
