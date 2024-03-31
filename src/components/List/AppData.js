@@ -4,7 +4,7 @@ function Profile(props) {
     return(
         <>
 
-            <div className="text-center bg-white rounded-md pb-4 m-auto my-2 shadow-md w-48">
+            <div className="text-center bg-white rounded-md pb-4 m-auto divimg my-2 shadow-md w-48">
                 <div className="overflow-hidden h-40 rounded-md">
                     <img
                         src={props.image}

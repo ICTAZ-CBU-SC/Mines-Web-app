@@ -42,13 +42,19 @@ function List() {
             id: 4,
             name: 'Gilbert N\'gandu',
             image: gilbert,
-            position: "Developer",
+            position: "Programming Coordinator",
+        },
+        {
+            id: 15,
+            name: 'Taonga Chibwe',
+            image: gloria,
+            position: "Media Director",
         },
         {
             id: 5,
             name: 'Gloria Chomba',
             image: gloria,
-            position: "Developer",
+            position: "Treasurer",
         },
         {
             id: 6,
@@ -69,7 +75,7 @@ function List() {
             id: 8,
             name: 'Songiso Moono',
             image: songiso,
-            position: "Developer",
+            position: "Student Developer",
         },
 
         {
