@@ -15,7 +15,7 @@ const Profile = (props) => { //recieve data from props.
     }
 
     //stores and initializes setinterval
-    //the function in inside runs every 2 seconds
+    //the function in inside runs every 2 second
     let myinterval = setInterval(() => {
         setnewVal()
     }, 2000)
