@@ -3,6 +3,8 @@ import { HiMenuAlt2 } from "react-icons/hi";
 import { FaUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { VscBellDot } from "react-icons/vsc";
+import { FaPeopleGroup } from "react-icons/fa6";
+
 
 const NavBar = () => {
     //slider is craeted with useState to change the state of the slider in nav
@@ -41,6 +43,12 @@ const NavBar = () => {
                                 <div style={{gap:'20px'}} className="d-flex p-2" >
                                     <div><VscBellDot size={20}/></div>
                                     <div className="d-flex flex-column justify-content-center fw-semibold">User Alerts</div>
+                                </div>
+                            </Link>
+                            <Link to='/list'>
+                                <div style={{gap:'20px'}} className="d-flex p-2" >
+                                    <div><FaPeopleGroup size={20}/></div>
+                                    <div className="d-flex flex-column justify-content-center fw-semibold">Our Team</div>
                                 </div>
                             </Link>
                         </div>
