@@ -45,7 +45,7 @@ const NavBar = () => {
                                     <div className="d-flex flex-column justify-content-center fw-semibold">User Alerts</div>
                                 </div>
                             </Link>
-                            <Link to='/List'>
+                            <Link to='/list'>
                                 <div style={{gap:'20px'}} className="d-flex p-2" >
                                     <div><FaPeopleGroup size={20}/></div>
                                     <div className="d-flex flex-column justify-content-center fw-semibold">Our Team</div>

@@ -6,16 +6,16 @@ function List() {
 
     const info = [
         {
-            name: 'Joshua Sibanda',
+            name: 'Bulaya Mwanaute',
         },
         {
-            name: 'George Palanga',
+            name: 'Gloria Chomba',
         },
         {
             name: 'Zimba Isaac',
         },
         {
-            name: 'Clivet Bigman',
+            name: 'Clivet Lungu',
         },
         {
             name: 'Joshua Sibanda',
