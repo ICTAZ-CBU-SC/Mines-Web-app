@@ -7,39 +7,51 @@ function List() {
     const info = [
         {
             name: 'Bulaya Mwanaute',
+            id:1
         },
         {
             name: 'Gloria Chomba',
+            id:2
         },
         {
             name: 'Zimba Isaac',
+            id:3
         },
         {
             name: 'Clivet Lungu',
+            id:4
         },
         {
             name: 'Amos Kanyanta',
+            id:5
         },
         {
             name: 'Gilbert',
+            id:6
         },
         {
             name: 'Zimba Isaac',
+            id:7
         },
         {
             name: 'Clivet Bigman',
+            id:8
         },
         {
             name: 'Joshua Sibanda',
+            id:9
         },
         {
             name: 'George Palanga',
+            id:10
         },
         {
             name: 'Zimba Isaac',
+            id:11
         },
         {
             name: 'Clivet Bigman',
+            id:12
         },
 
     ];
@@ -61,8 +73,8 @@ function List() {
                 <main className="w-full rounded-3xl m-auto p-10 b rounded-2xl">
                     <div className="w-4/5 m-auto">
                         <div className="m-auto sm:grid-cols-2 grid md:grid-cols-4 gap-4">
-                            {info.map((e) => (<div>
-                                <Profile name={e.name}></Profile>
+                            {info.map((e) => (<div key={e.id}   >
+                                <Profile  name={e.name}></Profile>
                             </div>
                             ))
                             }

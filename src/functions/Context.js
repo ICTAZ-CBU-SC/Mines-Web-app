@@ -1,8 +1,6 @@
 import axios from "axios";
-import { createContext, useContext, useEffect, useState } from "react"
-const signalR = require('@microsoft/signalr')
-
-
+import { createContext,  useEffect, useState } from "react"
+import { API_URL } from "../test";
 
 //creates context to be used throughout the project tree
 export const ThemeContext = createContext({});
@@ -15,8 +13,9 @@ export const MyContext = ({children}) => {
 
     //this hook runs when the browser renders or is refreshed
     useEffect(() => {
+        
         //this is the request function ...using axios to make a get request to our server
-            axios.get('http://192.168.0.103:5000/get-users')
+            axios.get(API_URL + 'get-users')
             //the  .then is used to perform assynchronouse programming
             .then((response) => {
 

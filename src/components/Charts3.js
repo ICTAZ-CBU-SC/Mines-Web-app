@@ -1,13 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import Chart from "react-apexcharts"
-import ApexCharts from "apexcharts";
-import { faker } from '@faker-js/faker';
 import subimg from './images/7906228_3805152.svg'
 
 const Charts3 = (props) => {
 
         //variables that can be changed and used in the map options and series opbjects
-            const [xdata, setXdata] = useState([0]);
         //sdsd
 
         //this function updates the Xdata variable and pushes the values inside the object
@@ -76,7 +73,7 @@ const Charts3 = (props) => {
                     enabled: true,
                     easing: 'linear',
                     dynamicAnimation: {
-                        speed: 1000
+                        speed: 2000
                     }
                 },
 
@@ -98,7 +95,7 @@ const Charts3 = (props) => {
                 enabled: false,
             },
             stroke: {
-                curve: 'smooth'
+                curve: 'straight'
             },
             title: {
                 text: 'Graph presentation of gas',
@@ -123,10 +120,10 @@ const Charts3 = (props) => {
             },
             yaxis: {
                 title: {
-                    text: 'pp'
+                    text: 'ppm'
                 },
-                min: 400,
-                max: 500
+                min: 1023,
+                max: 0
             },
             legend: {
                 show: false

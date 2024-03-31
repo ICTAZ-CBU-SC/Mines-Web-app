@@ -1,19 +1,20 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import subimg from './images/Untitled-1.svg'
+import { API_URL } from "../test";
 
 const MapComp = () => {
     const [imageState, setImageState] = useState(false)
 
     function updateVideoFeed() {
         const video = document.getElementById('video_feed');
-        video.src = "http://192.168.0.103:5000/video_feed/1"; // Set the source to the video feed endpoint
+        video.src = process.env.locallink + ":5000/video_feed/1"; // Set the source to the video feed endpoint
     }
 
 
     useEffect(() => {
         
-        axios.get('http://192.168.0.103:5000/video_feed/1')
+        axios.get(API_URL + 'video_feed/1')
             .then((res) => {
                 setImageState(true)
                 updateVideoFeed()
