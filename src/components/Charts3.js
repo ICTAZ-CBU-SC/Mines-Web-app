@@ -13,50 +13,50 @@ const Charts3 = (props) => {
         //this function updates the Xdata variable and pushes the values inside the object
         //everytime its run
         
-        const Chaneg = () => {
-            xdata.push(faker.number.int({ max: 1023 }))//pushes a rundom number
-            setXdata(xdata)//the Xdata with its updated copy
+        // const Chaneg = () => {
+        //     xdata.push(faker.number.int({ max: 1023 }))//pushes a rundom number
+        //     setXdata(xdata)//the Xdata with its updated copy
 
-            // let val2 = timer.length
-            // timer.push(val2)
-            // setTimer(timer)
-            //commented the code above=============
+        //     // let val2 = timer.length
+        //     // timer.push(val2)
+        //     // setTimer(timer)
+        //     //commented the code above=============
 
-            //this now updates the specific component in the graph
-            ApexCharts.exec('realtime', 'updateSeries', [{
-                data: xdata
-            }])
-        }
+        //     //this now updates the specific component in the graph
+        //     ApexCharts.exec('realtime', 'updateSeries', [{
+        //         data: xdata
+        //     }])
+        // }
 
-        //this function runs the function chaneg
-        const setnewVal = () => {
-            Chaneg()
-        }
-        setInterval(() => {
-        Demobtn()
-        }, 1000);
+        // //this function runs the function chaneg
+        // const setnewVal = () => {
+        //     Chaneg()
+        // }
+        // setInterval(() => {
+        // Demobtn()
+        // }, 1000);
 
-        const Demobtn = () => {
-        setnewVal()
-            // if (xdata.length >= 10) {
-            //     let n = faker.number.int({ max: 400 })
+        // const Demobtn = () => {
+        // setnewVal()
+        //     // if (xdata.length >= 10) {
+        //     //     let n = faker.number.int({ max: 400 })
 
-            //     let n2 = 0
+        //     //     let n2 = 0
 
-            //     for (let i = xdata.length - 1; i >= 0; i--) {
-            //         n2 = xdata[i]
-            //         xdata[i] = n
-            //         n = n2
+        //     //     for (let i = xdata.length - 1; i >= 0; i--) {
+        //     //         n2 = xdata[i]
+        //     //         xdata[i] = n
+        //     //         n = n2
 
-            //         setXdata(xdata)
-            //     }
-            //     ApexCharts.exec('realtime', 'updateSeries', [{
-            //         data: xdata
-            //     }])
-            // } else {
-            //     setnewVal()
-            // }
-        }
+        //     //         setXdata(xdata)
+        //     //     }
+        //     //     ApexCharts.exec('realtime', 'updateSeries', [{
+        //     //         data: xdata
+        //     //     }])
+        //     // } else {
+        //     //     setnewVal()
+        //     // }
+        // }
     
         //charts options object for chart customizations
         const series = [{
@@ -98,7 +98,7 @@ const Charts3 = (props) => {
                 enabled: false,
             },
             stroke: {
-                curve: 'straight'
+                curve: 'smooth'
             },
             title: {
                 text: 'Graph presentation of gas',
@@ -125,8 +125,8 @@ const Charts3 = (props) => {
                 title: {
                     text: 'pp'
                 },
-                min: 0,
-                max: 1023
+                min: 400,
+                max: 500
             },
             legend: {
                 show: false
@@ -148,8 +148,10 @@ const Charts3 = (props) => {
      else {
         return (
             <>
-                <div className="bg-light shadow-sm  text-center pt-4" style={{minHeight:'350px', overflow:'hidden'}}>
-                    <img src={subimg} alt="nodataimg" width='250px' />
+                <div className="bg-light shadow-sm text-center  pt-4" style={{minHeight:'350px', overflow:'hidden'}}>
+                    <div className="d-flex justify-content-center">
+                        <img src={subimg} alt="nodataimg" className="" width='250px' />
+                    </div>
                     <h4>No Connection...</h4>
                 </div>
             </>

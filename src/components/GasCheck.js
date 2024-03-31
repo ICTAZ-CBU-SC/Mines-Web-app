@@ -17,7 +17,7 @@ const GasCheck = (props) => {
                     <div>NAME: {props.name}</div>
                 </div>
                 <div className="shadow-sm p-3 rounded-4 d-flex" style={{gap:'10px', backgroundColor:'#ddd'}}>
-                    <div>Gas Level | {props.gas}% </div> |
+                    <div>Gas Level | {props.gas} </div> |
                     <div  className="d-flex flex-column justify-content-center">
                         {props.gas > 50 ? <span className="bg-danger" style={{width:'20px', height:'20px', borderRadius:'50%'}}></span> : <span className="bg-success" style={{width:'20px', height:'20px', borderRadius:'50%'}}></span>}
                     </div>
