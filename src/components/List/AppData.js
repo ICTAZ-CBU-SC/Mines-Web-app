@@ -9,7 +9,7 @@ function Profile(props) {
                     <img
                         src={props.image}
                         alt={props.name}
-                        className="w-full hover:scale-110 hover:duration-500"
+                        className="w-full hover:scale-110 duration-500 hover:duration-500"
                     />
                 </div>
                 <p className="block pt-6 text-lg font-semibold text-gray-800">{props.name}</p>
