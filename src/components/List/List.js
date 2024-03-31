@@ -18,10 +18,10 @@ function List() {
             name: 'Clivet Lungu',
         },
         {
-            name: 'Joshua Sibanda',
+            name: 'Amos Kanyanta',
         },
         {
-            name: 'George Palanga',
+            name: 'Gilbert',
         },
         {
             name: 'Zimba Isaac',
