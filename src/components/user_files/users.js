@@ -2,6 +2,7 @@
 
 import axios from "axios";
 import { useState } from "react";
+import { API_URL } from "../../test";
 
 const Profile = (props) => { //recieve data from props.
     //creates gas variable to store gas values though this is for 
@@ -20,7 +21,7 @@ const Profile = (props) => { //recieve data from props.
 
     //function that gets latest gas data specific to user using the user id
     const GetThatData = () => {
-        axios.get('http://192.168.0.103:5000/gas-readings-latest/' + props.id)
+        axios.get(API_URL + ':5000/gas-readings-latest/' + props.id)
             .then((response) => {
                 setGetData(response.data.Concentration)
             })

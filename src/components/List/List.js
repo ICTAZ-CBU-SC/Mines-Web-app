@@ -20,73 +20,90 @@ function List() {
 
 
     const info = [
-        
         {
+            id: 1,
             name: 'Benjamin Ngulube',
             image: benjamin,
             position: 'President',
         },
         {
+            id: 2,
             name: 'Zimba Isaac',
             image: zimba,
             position: "Vice President"
         },
         {
+            id: 3,
             name: 'Clivet Lungu',
             image: clivet,
             position: "Projects Coordinator"
         },
         {
+            id: 4,
             name: 'Gilbert N\'gandu',
             image: gilbert,
             position: "Developer",
         },
         {
-            name: 'Bulaya Mwanaute',
-            image: bulaya,
-            position: "Developer",
-        },
-        {
+            id: 5,
             name: 'Gloria Chomba',
             image: gloria,
             position: "Developer",
         },
         {
+            id: 6,
+            name: 'Bulaya Mwanaute',
+            image: bulaya,
+            position: "Developer",
+
+        },
+
+        {
+            id: 7,
             name: 'Amos Kanyanta',
             image: amos,
             position: "Developer",
         },
+
         {
+            id: 8,
             name: 'Songiso Moono',
             image: songiso,
             position: "Developer",
         },
+
         {
+            id: 9,
             name: 'Edgar Mwila',
             image: edgar,
             position: "Developer",
         },
         {
+            id: 10,
             name: 'Joshua Sibanda',
             image: joshua,
             position: "Developer",
         },
         {
+            id: 11,
             name: 'Palanga Nkobi',
             image: george,
             position: "Developer",
         },
         {
+            id: 12,
             name: 'Temwani',
             image: temwani,
             position: "Developer",
         },
         {
+            id: 13,
             name: 'Dingiswayo Nkwashi',
             image: dingiswayo,
             position: "Developer",
         },
         {
+            id: 14,
             name: 'Harriet Mulonda',
             image: harriet,
             position: "Developer",
@@ -97,13 +114,13 @@ function List() {
     return (
         <>
 
-            
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.5 }}
-                >
-                    <div className="bg-gray-100">
+
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
+            >
+                <div className="bg-gray-50">
                     <div className="mt-8 mb-12 w-11/12 md:w-2/5 rounded-full p-4 m-auto text-center text-gray-700 flex justify">
                         <div>
                             <p className="text-3xl font-semibold">
@@ -112,6 +129,7 @@ function List() {
                             <p className="py-2 text-gray-800 text-[16] underline underline-offset-8">Our team of brave sudents</p>
                         </div>
                     </div>
+
 
                     <main className="w-full rounded-3xl m-auto p-10 b rounded-2xl">
                         <div className="w-4/5 m-auto">
@@ -124,10 +142,8 @@ function List() {
                             </div>
                         </div>
                     </main>
-                    </div>
-                </motion.div >
-            
-        
+                </div>
+            </motion.div >
         </>
     )
 }

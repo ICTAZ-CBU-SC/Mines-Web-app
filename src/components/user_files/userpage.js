@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext} from "react";
 import Profile from "./users";
 import { ThemeContext } from "../../functions/Context";
 import {motion} from 'framer-motion'
