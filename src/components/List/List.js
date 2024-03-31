@@ -57,9 +57,9 @@ function List() {
             <main className="w-full rounded-3xl m-auto p-10 b rounded-2xl">
                 <div className="w-4/5 m-auto">
                     <div className="m-auto sm:grid-cols-2 grid md:grid-cols-4 gap-4">
-                        {info.map((e) => (<Link to={'/AppData' + e.id}>
+                        {info.map((e) => (<div>
                             <Profile name={e.name}></Profile>
-                        </Link>
+                        </div>
                         ))
                         }
                     </div>

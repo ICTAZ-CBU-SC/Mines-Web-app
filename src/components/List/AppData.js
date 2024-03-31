@@ -9,7 +9,7 @@ function Profile(props) {
                 <img
                     src={image}
                     alt='image'
-                    className="m-auto h-36 w-36 rounded-full shadow-2xl border-[3px] border-green-600 p-1"
+                    className="m-auto h-36 w-36 rounded-full shadow-sm border-[3px] "
                 />
                 <p className="block pt-6 text-lg font-semibold text-gray-800">{props.name}</p>
                 <p className="block text-[14px] text-sky-600 font-semibold">Developer</p>
