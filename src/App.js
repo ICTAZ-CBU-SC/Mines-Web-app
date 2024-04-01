@@ -4,12 +4,10 @@ import NavBar from './components/Headers_and_footers/Nav';
 import './App.css';
 import UserPage from './components/user_files/userpage';
 import List from './components/List/List';
-import { API_URL } from './test';
 
 
 
 function App() {
-  console.log(API_URL)
   return (
     <>
       <BrowserRouter>

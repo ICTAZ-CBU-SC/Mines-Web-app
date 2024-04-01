@@ -21,7 +21,7 @@ const Profile = (props) => { //recieve data from props.
 
     //function that gets latest gas data specific to user using the user id
     const GetThatData = () => {
-        axios.get(API_URL + ':5000/gas-readings-latest/' + props.id)
+        axios.get(API_URL + 'gas-readings-latest/' + props.id)
             .then((response) => {
                 setGetData(response.data.Concentration)
             })

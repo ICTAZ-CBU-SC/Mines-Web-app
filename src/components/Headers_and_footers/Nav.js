@@ -33,24 +33,24 @@ const NavBar = () => {
                 <div className="bg-secondary " style={{position:'relative', zIndex:3}}>
                     <div className="slidenav_2 shadow-sm" id="slidenav" style={{height:'100vh', overflow:'hidden',position:"fixed", top:0, bottom:0, left:0}}>
                         <div className="bg-white" style={{width:'100%', paddingTop:'60px', height:'100%'}}>
-                            <Link to='/'>
+                            <a href='/'>
                                 <div style={{gap:'20px'}} className="d-flex p-2" >
                                     <div><FaUser size={20}/></div>
                                     <div className="d-flex flex-column justify-content-center fw-semibold">All users</div>
                                 </div>
-                            </Link>
-                            <Link to=''>
+                            </a>
+                            <a href=''>
                                 <div style={{gap:'20px'}} className="d-flex p-2" >
                                     <div><VscBellDot size={20}/></div>
                                     <div className="d-flex flex-column justify-content-center fw-semibold">User Alerts</div>
                                 </div>
-                            </Link>
-                            <Link to='/list'>
+                            </a>
+                            <a href='/list'>
                                 <div style={{gap:'20px'}} className="d-flex p-2" >
                                     <div><FaPeopleGroup size={20}/></div>
                                     <div className="d-flex flex-column justify-content-center fw-semibold">Our Team</div>
                                 </div>
-                            </Link>
+                            </a>
                         </div>
                     </div>
                     <div style={{position:'fixed', top:'10px', left:'10px'}}>

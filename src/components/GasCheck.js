@@ -1,27 +1,60 @@
 import { FaArrowLeft } from "react-icons/fa6";
-import { Link } from "react-router-dom";
+import { ThemeContext } from "../functions/Context";
+import { useContext, useState } from "react";
+import { API_URL } from "../test";
+import axios from "axios";
+// import { Link } from "react-router-dom";
 
 const GasCheck = (props) => {
+    const [datas2, setDatas2] = useState(0)
+    const data = useContext(ThemeContext)
+
+    let mydataname = data.filter((e) => e.id == props.id)
+    let truedata = mydataname[0]
+
+
+    const GetThatData = () => {
+        axios.get(API_URL + 'gas-readings-latest/' + props.id)
+            .then((response) => {
+                setDatas2(response.data.Concentration)
+            })
+            .catch((err) => {
+                clearInterval(thatinterval)
+            })
+    }
+
+    let thatinterval = setInterval(() => {
+        GetThatData()
+    }, 2000);
 
     return (
         <>
             <div className="d-flex justify-content-between pt-3" >
                 <div  className="d-flex flex-column justify-content-center">
-                    <Link to='/'>
+                    <a href='/'>
                         <FaArrowLeft size={20} />
-                    </Link>
+                    </a>
                 </div>
 
                 <div className="shadow-sm p-3 rounded-4 d-flex" style={{gap:'10px', backgroundColor:'#ddd'}}>
-                    <div>NAME: {props.name}</div>
+                    <div>NAME:
+                    {truedata
+                    ?
+                    <>
+                    {` ${truedata.middlename} ${truedata.surname}`}
+                    </>
+                :
+                <></>
+                }
+                </div>
                 </div>
                 <div className="shadow-sm p-3 rounded-4 d-flex" style={{gap:'10px', backgroundColor:'#ddd'}}>
-                    <div>Gas Level | {props.gas} </div> |
+                    <div>Gas Level {datas2} </div> |
                     <div  className="d-flex flex-column justify-content-center">
-                        {props.gas > 50 ? <span className="bg-danger" style={{width:'20px', height:'20px', borderRadius:'50%'}}></span> : <span className="bg-success" style={{width:'20px', height:'20px', borderRadius:'50%'}}></span>}
+                        {datas2 > 250 ? <span className="bg-danger" style={{width:'20px', height:'20px', borderRadius:'50%'}}></span> : <span className="bg-success" style={{width:'20px', height:'20px', borderRadius:'50%'}}></span>}
                     </div>
                 </div>
-                {props.gas > 50 ?<div id="blinkAlert" className="d-flex flex-column justify-content-center">
+                {datas2 > 250 ?<div id="blinkAlert" className="d-flex flex-column justify-content-center">
                     <span className="bg-danger" style={{width:'20px', height:'20px', borderRadius:'50%'}}></span>
                 </div>: <span>All clear</span>}
             </div>
