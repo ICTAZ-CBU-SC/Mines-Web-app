@@ -1,8 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import Chart from "react-apexcharts"
 import subimg from './images/7906228_3805152.svg'
+import ApexCharts from "apexcharts";
+import { io } from "socket.io-client";
 
-const Charts3 = (props) => {
+const Charts3 = () => {
+    const [datas, setData] = useState([0])
+
+    const socket = io('http://192.168.0.102:5000');
+
+    socket.on("new_gas_reading", (data) => {
+        if(data){
+            datas.push(data.concentration)
+            setData(datas)
+
+            ApexCharts.exec('realtime', 'updateSeries', [{
+                data: datas
+            }])
+        }
+    
+      });
 
         //variables that can be changed and used in the map options and series opbjects
         //sdsd
@@ -59,7 +76,7 @@ const Charts3 = (props) => {
         const series = [{
             label:'helo',
             name:'datas',
-            data: props.gass,
+            data: datas,
             max: 100
         }]
 
@@ -133,7 +150,7 @@ const Charts3 = (props) => {
 
 
     //chacks for the props for gass and its values to check if there is anything in it
-    if(!props.gass){
+    if(datas){
         return (
             <div>
                 <div id="chart">

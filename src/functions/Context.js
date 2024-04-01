@@ -2,6 +2,12 @@ import axios from "axios";
 import { createContext,  useEffect, useState } from "react"
 import { API_URL } from "../test";
 
+
+
+
+
+
+
 //creates context to be used throughout the project tree
 export const ThemeContext = createContext({});
 
@@ -10,6 +16,9 @@ export const MyContext = ({children}) => {
     //this is a useState hook used to create the datas variable that will then be
     // used to store incoming data from the api
     const [datas, setDatas] = useState([])
+
+
+
 
     //this hook runs when the browser renders or is refreshed
     useEffect(() => {

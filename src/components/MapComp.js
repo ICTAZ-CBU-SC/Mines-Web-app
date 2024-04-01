@@ -33,7 +33,7 @@ const MapComp = () => {
                     {!imageState ?   
                         <>
                             <div className="bg-secondary p-4 shadow-sm d-flex justify-content-center rounded-3 shadow-sm">
-                                <img id="video_feed" style={{ height: '300px' }} src="#" alt="Video Feed" />
+                                <img id="video_feed" style={{ maxHeight: '300px' }} src="#" alt="Video Feed" />
                             </div>
                         </>
                         :

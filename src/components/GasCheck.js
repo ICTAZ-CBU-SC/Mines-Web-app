@@ -1,8 +1,7 @@
 import { FaArrowLeft } from "react-icons/fa6";
 import { ThemeContext } from "../functions/Context";
 import { useContext, useState } from "react";
-import { API_URL } from "../test";
-import axios from "axios";
+import { io } from "socket.io-client";
 // import { Link } from "react-router-dom";
 
 const GasCheck = (props) => {
@@ -12,20 +11,29 @@ const GasCheck = (props) => {
     let mydataname = data.filter((e) => e.id == props.id)
     let truedata = mydataname[0]
 
+    const socket = io('http://192.168.0.102:5000');
 
-    const GetThatData = () => {
-        axios.get(API_URL + 'gas-readings-latest/' + props.id)
-            .then((response) => {
-                setDatas2(response.data.Concentration)
-            })
-            .catch((err) => {
-                clearInterval(thatinterval)
-            })
-    }
+    socket.on("new_gas_reading", (data) => {
+        
+        if(data){
+            setDatas2(data.concentration)
+        }
+    
+      });
 
-    let thatinterval = setInterval(() => {
-        GetThatData()
-    }, 2000);
+    // const GetThatData = () => {
+    //     axios.get(API_URL + 'gas-readings-latest/' + props.id)
+    //         .then((response) => {
+    //             setDatas2(response.data.Concentration)
+    //         })
+    //         .catch((err) => {
+    //             clearInterval(thatinterval)
+    //         })
+    // }
+
+    // let thatinterval = setInterval(() => {
+    //     GetThatData()
+    // }, 2000);
 
     return (
         <>

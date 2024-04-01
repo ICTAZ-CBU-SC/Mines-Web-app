@@ -3,6 +3,7 @@
 import axios from "axios";
 import { useState } from "react";
 import { API_URL } from "../../test";
+import { io } from "socket.io-client";
 
 const Profile = (props) => { //recieve data from props.
     //creates gas variable to store gas values though this is for 
@@ -20,21 +21,32 @@ const Profile = (props) => { //recieve data from props.
 
 
     //function that gets latest gas data specific to user using the user id
-    const GetThatData = () => {
-        axios.get(API_URL + 'gas-readings-latest/' + props.id)
-            .then((response) => {
-                setGetData(response.data.Concentration)
-            })
-            .catch((err) => {
-                clearInterval(intervals)
-            })
+    // const GetThatData = () => {
+    //     axios.get(API_URL + 'gas-readings-latest/' + props.id)
+    //         .then((response) => {
+    //             setGetData(response.data.Concentration)
+    //         })
+    //         .catch((err) => {
+    //             clearInterval(intervals)
+    //         })
+    // }
+
+    
+const socket = io('http://192.168.0.102:5000');
+
+socket.on("new_gas_reading", (data) => {
+    if(data){
+        setGetData(data.concentration)
     }
 
+  });
+
+  
     //stores and initializes setinterval
     //the function in inside runs every 2 seconds
-   let intervals = setInterval(() => {
-        GetThatData()
-    }, 2000)
+//    let intervals = setInterval(() => {
+//         GetThatData()
+//     }, 2000)
 
     return (
         <div style={{}}>

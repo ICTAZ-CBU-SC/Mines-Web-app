@@ -2,7 +2,6 @@ import { useLocation } from "react-router-dom";
 import GasCheck from "./components/GasCheck";
 import MapComp from "./components/MapComp";
 import Charts3 from "./components/Charts3";
-import ApexCharts from "apexcharts";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { motion } from 'framer-motion'
@@ -18,7 +17,7 @@ const MainPage = () => {
     // let { id } = useParams()
 
 
-    const GetGassInfoFromApi = () => {
+    // const GetGassInfoFromApi = () => {
         // let anotherValue = faker.number.int({max:500})
         // datas.push(anotherValue)
 
@@ -28,28 +27,28 @@ const MainPage = () => {
         //     data: datas
         // }])
 
-        axios.get(API_URL + 'gas-readings-latest/1')
-            .then((response) => {
-                if (response) {
-                    datas.push(response.data.Concentration)
-                    setDatas(datas)
-                }
-            })
-            .catch((err) => {
-                console.log(err)
-            })
-            .finally(() => {
-                ApexCharts.exec('realtime', 'updateSeries', [{
-                    data: datas
-                }])
-            })
-        // clearInterval(thatinterval)
+    //     axios.get(API_URL + 'gas-readings-latest/1')
+    //         .then((response) => {
+    //             if (response) {
+    //                 datas.push(response.data.Concentration)
+    //                 setDatas(datas)
+    //             }
+    //         })
+    //         .catch((err) => {
+    //             console.log(err)
+    //         })
+    //         .finally(() => {
+    //             ApexCharts.exec('realtime', 'updateSeries', [{
+    //                 data: datas
+    //             }])
+    //         })
+    //     // clearInterval(thatinterval)
 
-    }
+    // }
 
-    let thatinterval = setInterval(() => {
-        GetGassInfoFromApi()
-    }, 2000);
+    // let thatinterval = setInterval(() => {
+    //     GetGassInfoFromApi()
+    // }, 2000);
 
 
     useEffect(() => {
@@ -63,11 +62,11 @@ const MainPage = () => {
         >
             <div className="ps-5 ms-3 p-4 d-flex flex-column" style={{ minHeight: '100vh', gap: '20px' }}>
                 <div>
-                    <GasCheck id={1} {...location.state} />
+                    <GasCheck id={1}  />
                 </div>
-                <MapComp {...location.state} />
+                <MapComp />
 
-                <Charts3 gas={datas} />
+                <Charts3/>
             </div>
         </motion.div>
     );
