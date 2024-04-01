@@ -142,9 +142,9 @@ function List() {
                         <div className="w-4/5 m-auto">
                             <div className="m-auto sm:grid-cols-2 grid md:grid-cols-4 gap-4">
                                 {info.map((e) => (
-                                    <Link to={'/AppData' + e.id}>
+                                    <div style={{cursor:'pointer'}} to={'/AppData' + e.id}>
                                         <Profile position={e.position} image={e.image} name={e.name}></Profile>
-                                    </Link>
+                                    </div>
                                 ))}
                             </div>
                         </div>

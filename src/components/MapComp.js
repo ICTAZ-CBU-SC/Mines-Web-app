@@ -6,32 +6,34 @@ import { API_URL } from "../test";
 const MapComp = () => {
     const [imageState, setImageState] = useState(false)
 
-    function updateVideoFeed() {
-        const video = document.getElementById('video_feed');
-        video.src = process.env.locallink + ":5000/video_feed/1"; // Set the source to the video feed endpoint
-    }
-
+    
 
     useEffect(() => {
+            // function updateVideoFeed() {
+                const video = document.getElementById('video_feed');
+                video.src = API_URL + "video_feed"; // Set the source to the video feed endpoint
+            // }
         
-        axios.get(API_URL + 'video_feed/1')
-            .then((res) => {
-                setImageState(true)
-                updateVideoFeed()
-            })
-            .catch((err) => {
+        // axios.get(API_URL + 'video_feed')
+        //     .then((res) => {
+        //         // setImageState(true)
+        //         // updateVideoFeed()
+        //         console.log('connection success')
+        //     })
+        //     .catch((err) => {
+        //         console.log('connection err')
 
-            })
+        //     })
     }, [])
 
     return (
         <>
             <div>
                 <div className="d-flex  justify-content-center">
-                    {imageState ?
+                    {!imageState ?   
                         <>
                             <div className="bg-secondary p-4 shadow-sm d-flex justify-content-center rounded-3 shadow-sm">
-                                <img id="video_feed" style={{ height: '100%' }} src="#" alt="Video Feed" />
+                                <img id="video_feed" style={{ height: '300px' }} src="#" alt="Video Feed" />
                             </div>
                         </>
                         :

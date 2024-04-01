@@ -69,14 +69,12 @@ const Charts3 = (props) => {
                 id: 'realtime',
                 height: 350,
                 type: 'line',
-                animations: {
-                    enabled: true,
-                    easing: 'linear',
-                    dynamicAnimation: {
-                        speed: 2000
-                    }
-                },
-
+                toolbar: {
+                    show: false
+                  },
+                  zoom: {
+                    enabled: false
+                  },
                 dropShadow: {
                     enabled: true,
                     color: '#000',
@@ -84,11 +82,14 @@ const Charts3 = (props) => {
                     left: 7,
                     blur: 10,
                     opacity: 0.2
-
-                }
-            },
-            zoom: {
-                enabled: false
+                },
+                animations: {
+                    enabled: true,
+                    easing: 'linear',
+                    dynamicAnimation: {
+                      speed: 2000
+                    }
+                  },
             },
             colors: ['#77B6EA', '#545454'],
             dataLabels: {
@@ -122,17 +123,17 @@ const Charts3 = (props) => {
                 title: {
                     text: 'ppm'
                 },
-                min: 1023,
-                max: 0
+                min: 0,
+                max: 500
             },
             legend: {
                 show: false
-            },
+            }
         }
 
 
     //chacks for the props for gass and its values to check if there is anything in it
-    if(props.gass){
+    if(!props.gass){
         return (
             <div>
                 <div id="chart">
