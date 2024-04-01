@@ -14,6 +14,7 @@ import temwani from '../images/temwani.jpeg';
 import gilbert from '../images/gilbert.jpeg';
 import songiso from '../images/songiso.jpeg';
 import joshua from '../images/joshua.jpeg';
+import taonga from '../images/taonga.jpeg';
 import { motion } from 'framer-motion'
 
 function List() {
@@ -46,8 +47,8 @@ function List() {
         },
         {
             id: 15,
-            name: 'Taonga Chibwe',
-            image: gloria,
+            name: 'Banda Chibuye',
+            image: taonga,
             position: "Media Director",
         },
         {
