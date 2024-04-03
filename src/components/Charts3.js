@@ -3,11 +3,12 @@ import Chart from "react-apexcharts"
 import subimg from './images/7906228_3805152.svg'
 import ApexCharts from "apexcharts";
 import { io } from "socket.io-client";
+import { API_URL } from "../test";
 
 const Charts3 = () => {
     const [datas, setData] = useState([0])
 
-    const socket = io('http://192.168.0.102:5000');
+    const socket = io(API_URL);
 
     socket.on("new_gas_reading", (data) => {
         if(data){
@@ -141,7 +142,7 @@ const Charts3 = () => {
                     text: 'ppm'
                 },
                 min: 0,
-                max: 500
+                max: 1023
             },
             legend: {
                 show: false

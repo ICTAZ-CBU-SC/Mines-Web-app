@@ -2,6 +2,7 @@ import { FaArrowLeft } from "react-icons/fa6";
 import { ThemeContext } from "../functions/Context";
 import { useContext, useState } from "react";
 import { io } from "socket.io-client";
+import { API_URL } from "../test";
 // import { Link } from "react-router-dom";
 
 const GasCheck = (props) => {
@@ -11,7 +12,7 @@ const GasCheck = (props) => {
     let mydataname = data.filter((e) => e.id == props.id)
     let truedata = mydataname[0]
 
-    const socket = io('http://192.168.0.102:5000');
+    const socket = io(API_URL);
 
     socket.on("new_gas_reading", (data) => {
         

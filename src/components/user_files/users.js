@@ -32,7 +32,7 @@ const Profile = (props) => { //recieve data from props.
     // }
 
     
-const socket = io('http://192.168.0.102:5000');
+const socket = io(API_URL);
 
 socket.on("new_gas_reading", (data) => {
     if(data){

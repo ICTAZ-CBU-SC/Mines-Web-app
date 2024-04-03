@@ -65,8 +65,9 @@ const MainPage = () => {
                     <GasCheck id={1}  />
                 </div>
                 <MapComp />
-
-                <Charts3/>
+                <div className="p-3">
+                    <Charts3/>
+                </div>
             </div>
         </motion.div>
     );

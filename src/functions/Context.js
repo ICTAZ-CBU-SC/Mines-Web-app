@@ -24,7 +24,7 @@ export const MyContext = ({children}) => {
     useEffect(() => {
         
         //this is the request function ...using axios to make a get request to our server
-            axios.get(API_URL + 'get-users')
+            axios.get(API_URL + '/get-users')
             //the  .then is used to perform assynchronouse programming
             .then((response) => {
 
